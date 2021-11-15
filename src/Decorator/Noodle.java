@@ -1,7 +1,10 @@
 package Decorator;
 
-public interface Noodle {
+public abstract class Noodle {
+    String ingredient = "Choose your Incridents";
 
-    String getDescription();
-    double getPrice();
+    public String getIngredient(){
+        return ingredient;
+    }
+    public abstract double getPrice();
 }

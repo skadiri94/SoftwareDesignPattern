@@ -1,10 +1,11 @@
 package Decorator;
 
-public class Udon implements Noodle{
-    @Override
-    public String getDescription() {
-        return "Udon was selected for base";
+public class Udon extends Noodle{
+
+    public Udon(){
+        ingredient = "Udo";
     }
+
 
     @Override
     public double getPrice() {

@@ -12,7 +12,7 @@ public class Main {
 
         Noodle takeOut = new Beef(new Chicken(new Udon()));
 
-        System.out.println("Recipe ::" + takeOut.getDescription() +
+        System.out.println("Recipe ::" + takeOut.getIngredient() +
                 " \n" + "Price ::" + takeOut.getPrice());
 
 

@@ -6,8 +6,8 @@ public class Beef extends NoodleDecorator {
     }
 
     @Override
-    public String getDescription() {
-        return noodle.getDescription() + ", Beef was added";
+    public String getIngredient() {
+        return noodle.getIngredient() + ", Beef ";
     }
 
     @Override

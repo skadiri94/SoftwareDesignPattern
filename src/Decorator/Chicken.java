@@ -6,8 +6,8 @@ public class Chicken extends NoodleDecorator{
     }
 
     @Override
-    public String getDescription() {
-        return noodle.getDescription() + ", Chicken was added";
+    public String getIngredient() {
+        return noodle.getIngredient() + ", Chicken ";
     }
 
     @Override

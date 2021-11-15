@@ -1,0 +1,46 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Noodle{
+
+    -String ingredient
+    +String getIngridient()
+   {abstract}+ Double getPrice()
+
+}
+
+abstract class BasicNoodle{
+getPrice()
+}
+
+class Udo{
+getCost()
+}
+
+abstract class NoodleDecorator{
+{abstract} + getDiscription()
+}
+
+class Beef{
++ String getDiscription()
+}
+
+class Chicken{
++ String getDiscription()
+}
+
+class HotAsia{
++ String getDiscription()
+}
+
+
+Noodle<|--BasicNoodle
+Noodle<|-- Udo
+
+Noodle<|--NoodleDecorator
+NoodleDecorator --> Noodle
+
+NoodleDecorator<|..Beef
+NoodleDecorator<|..Chicken
+NoodleDecorator<|..HotAsia
+@enduml

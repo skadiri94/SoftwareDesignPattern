@@ -1,18 +1,10 @@
 package Decorator;
 
-public abstract class NoodleDecorator implements Noodle {
+public abstract class NoodleDecorator extends Noodle {
     protected Noodle noodle;
     public NoodleDecorator(Noodle noodle){
      this.noodle = noodle;
     }
-    @Override
-    public String getDescription() {
-        return noodle.getDescription();
-    }
 
-    @Override
-    public double getPrice() {
-        return noodle.getPrice();
-    }
-
+    public abstract String getIngredient();
 }
