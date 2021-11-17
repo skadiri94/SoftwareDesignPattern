@@ -1,4 +1,4 @@
-package Decorator;
+package Decorator.Noodle;
 
 public abstract class Noodle {
     String ingredient = "Choose your Incridents";
@@ -8,3 +8,4 @@ public abstract class Noodle {
     }
     public abstract double getPrice();
 }
+

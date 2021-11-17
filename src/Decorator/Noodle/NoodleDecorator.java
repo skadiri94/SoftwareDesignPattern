@@ -1,4 +1,6 @@
-package Decorator;
+package Decorator.Noodle;
+
+import Decorator.Noodle.Noodle;
 
 public abstract class NoodleDecorator extends Noodle {
     protected Noodle noodle;

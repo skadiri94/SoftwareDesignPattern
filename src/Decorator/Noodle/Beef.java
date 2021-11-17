@@ -1,4 +1,4 @@
-package Decorator;
+package Decorator.Noodle;
 
 public class Beef extends NoodleDecorator {
     public Beef(Noodle noodle) {

@@ -1,6 +1,6 @@
-package Decorator;
+package Decorator.Noodle;
 
-public class Chicken extends NoodleDecorator{
+public class Chicken extends NoodleDecorator {
     public Chicken(Noodle noodle) {
         super(noodle);
     }

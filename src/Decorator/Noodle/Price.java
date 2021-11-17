@@ -1,4 +1,4 @@
-package Decorator;
+package Decorator.Noodle;
 
 public enum Price {
    UDO(1.9), BASICNOODLE(2);

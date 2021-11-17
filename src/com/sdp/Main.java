@@ -1,19 +1,16 @@
 package com.sdp;
 
-import Decorator.Beef;
-import Decorator.Chicken;
-import Decorator.Noodle;
-import Decorator.Udon;
+import Decorator.Glasses.GlassesFrame;
+import Decorator.Glasses.Lens;
+import Decorator.Glasses.SquareFrame;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
 
-        Noodle takeOut = new Beef(new Chicken(new Udon()));
+        GlassesFrame newGlasses = new SquareFrame(new Lens("Varifocal", 55.0), "Medium" );
+        System.out.println(newGlasses.getLenseDetails() + "\nTotal Cost :: € " + newGlasses.getCost());
 
-        System.out.println("Recipe ::" + takeOut.getIngredient() +
-                " \n" + "Price ::" + takeOut.getPrice());
 
 
     }

@@ -1,6 +1,8 @@
-package Decorator;
+package Decorator.Noodle;
 
-public class Udon extends Noodle{
+import Decorator.Noodle.Noodle;
+
+public class Udon extends Noodle {
 
     public Udon(){
         ingredient = "Udo";
