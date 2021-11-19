@@ -1,0 +1,136 @@
+@startuml
+left to right direction
+
+skinparam classAttributeIconSize 0
+
+abstract class GlassesFrame {
+#Lens lens
+#String size
+
++getDescription(): String
+{abstract} +getCost(): double
+{abstract} +getSize(): String
+
+
+}
+class Lens {
+-String type
+-double cost
++ Lens(type: String, cost: double)
++ getDescription()
++getCost()
+
+}
+
+class RoundFrame {
++RoundFrame(lens: Lens, size: String)
++ getDescription()
++getCost()
+}
+
+class CatEyesFrame {
++CatEyesFrame(lens: Lens, size: String)
++ getDescription()
++getCost()
+}
+
+class SquareFrame {
++SquareFrame(lens: Lens, size: String)
++ getDescription()
++getCost()
+}
+
+class CatEyesFrameAntiReflective{
++ getDescription()
++getCost()
+}
+class CatEyesFramePlarized{
++ getDescription()
++getCost()
+}
+class CatEyesFramePolycarbonate{
++ getDescription()
++getCost()
+}
+class CatEyesFrameBlueLight{
++ getDescription()
++getCost()
+}
+class CatEyesFramePhotochromicTransition{
++ getDescription()
++getCost()
+}
+
+class SquareFrameAntiReflective{
++ getDescription()
++getCost()
+}
+class SquareFramePlarized{
++ getDescription()
++getCost()
+}
+class SquareFramePolycarbonate{
++ getDescription()
++getCost()
+}
+class SquareFrameBlueLight{
++ getDescription()
++getCost()
+}
+class SquareFramePhotochromicTransition{
++ getDescription()
++getCost()
+}
+
+class RoundFrameAntiReflective{
++ getDescription()
++getCost()
+}
+class RoundFramePlarized{
++ getDescription()
++getCost()
+}
+class RoundFramePolycarbonate{
++ getDescription()
++getCost()
+}
+class RoundFrameBlueLight{
++ getDescription()
++getCost()
+}
+class RoundFramePhotochromicTransition{
++ getDescription()
++getCost()
+}
+
+GlassesFrame o--up"0..2" Lens : has
+
+GlassesFrame <|--right SquareFrame
+GlassesFrame <|--left RoundFrame
+GlassesFrame <|-- CatEyesFrame
+
+CatEyesFrame <|-- CatEyesFramePlarized
+CatEyesFrame <|-- CatEyesFrameAntiReflective
+CatEyesFrame <|-- CatEyesFramePolycarbonate
+CatEyesFrame <|-- CatEyesFrameBlueLight
+CatEyesFrame <|-- CatEyesFramePhotochromicTransition
+
+SquareFrame <|-- SquareFramePlarized
+SquareFrame <|-- SquareFrameAntiReflective
+SquareFrame <|-- SquareFramePolycarbonate
+SquareFrame <|-- SquareFrameBlueLight
+SquareFrame <|-- SquareFramePhotochromicTransition
+
+
+RoundFrame <|-- RoundFramePlarized
+RoundFrame <|-- RoundFrameAntiReflective
+RoundFrame <|-- RoundFramePolycarbonate
+RoundFrame <|-- RoundFrameBlueLight
+RoundFrame <|-- RoundFramePhotochromicTransition
+
+
+
+
+
+
+@enduml

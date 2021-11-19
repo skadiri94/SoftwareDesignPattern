@@ -37,7 +37,7 @@ class SquareFrame {
 + getDescription()
 +getCost()
 }
-GlassesFrame o--"0..2" Lens : has
+GlassesFrame o--left"0..2" Lens : has
 
 GlassesFrame <|-- SquareFrame
 GlassesFrame <|-- RoundFrame
