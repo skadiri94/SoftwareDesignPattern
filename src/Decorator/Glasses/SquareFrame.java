@@ -1,20 +1,13 @@
 package Decorator.Glasses;
 
 public class SquareFrame extends GlassesFrame {
-    public SquareFrame(Lens lens, String size) {
+    public SquareFrame(Lens lens, Size size) {
         super(lens,  size);
-    }
-
-    @Override
-    public String getLenseDetails(){
-        return "Lens Type :: " + lens.getType() +
-                "\nLens Cost :: " + lens.getCost() +
-                "\nFrame Type :: Square" +
-                "\nSize :: " + size;
+        description = "Square Frame - €" + Cost.SQUARE_FRAME.getValue();
     }
 
     @Override
     public double getCost() {
-        return lens.getCost() + 75;
+        return lens.getCost() + Cost.SQUARE_FRAME.getValue() + size.getValue();
     }
 }

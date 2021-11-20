@@ -1,21 +1,13 @@
 package Decorator.Glasses;
 
 public class CatEyesFrame extends GlassesFrame{
-    public CatEyesFrame(Lens lens, String size) {
+    public CatEyesFrame(Lens lens, Size size) {
         super( lens, size);
-    }
-
-    @Override
-    public String getLenseDetails(){
-        return "Lens Type :: " + lens.getType() +
-                "\nLens Cost :: " + lens.getCost() +
-                "\nFrame Type :: Cat Eye" +
-                "\nSize :: " + size;
-
+        description = "Cat Eyes Frame - €" + Cost.CAT_EYE_FRAME.getValue();
     }
 
     @Override
     public double getCost() {
-        return lens.getCost() + 85;
+        return lens.getCost() + Cost.CAT_EYE_FRAME.getValue() + size.getValue();
     }
 }

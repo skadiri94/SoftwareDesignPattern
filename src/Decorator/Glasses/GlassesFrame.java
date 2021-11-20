@@ -1,19 +1,22 @@
 package Decorator.Glasses;
 
 public abstract  class GlassesFrame {
-
     protected Lens lens;
-    protected  String size;
+    protected   Size size;
+    String description = "No Frame Selected";
 
-    public GlassesFrame(Lens lens, String size){
+    public GlassesFrame(){}
+
+    public GlassesFrame(Lens lens, Size size){
        this.lens = lens;
        this.size = size;
     }
 
-    public String getLenseDetails(){
+    public String getDescription(){
         return "Lens Type :: " + lens.getType() +
                 "\nLens Cost :: " + lens.getCost() +
-                "\nSize :: " + size;
+                "\nFrame Type :: " + description +
+                "\nSize :: " + size + " + €" + size.getValue() ;
 
     }
     public abstract double getCost();

@@ -44,7 +44,7 @@ class CatEyesFrameAntiReflective{
 + getDescription()
 +getCost()
 }
-class CatEyesFramePlarized{
+class CatEyesFramePolarized{
 + getDescription()
 +getCost()
 }
@@ -65,7 +65,7 @@ class SquareFrameAntiReflective{
 + getDescription()
 +getCost()
 }
-class SquareFramePlarized{
+class SquareFramePolarized{
 + getDescription()
 +getCost()
 }
@@ -86,7 +86,7 @@ class RoundFrameAntiReflective{
 + getDescription()
 +getCost()
 }
-class RoundFramePlarized{
+class RoundFramePolarized{
 + getDescription()
 +getCost()
 }
@@ -109,20 +109,20 @@ GlassesFrame <|--right SquareFrame
 GlassesFrame <|--left RoundFrame
 GlassesFrame <|-- CatEyesFrame
 
-CatEyesFrame <|-- CatEyesFramePlarized
+CatEyesFrame <|-- CatEyesFramePolarized
 CatEyesFrame <|-- CatEyesFrameAntiReflective
 CatEyesFrame <|-- CatEyesFramePolycarbonate
 CatEyesFrame <|-- CatEyesFrameBlueLight
 CatEyesFrame <|-- CatEyesFramePhotochromicTransition
 
-SquareFrame <|-- SquareFramePlarized
+SquareFrame <|-- SquareFramePolarized
 SquareFrame <|-- SquareFrameAntiReflective
 SquareFrame <|-- SquareFramePolycarbonate
 SquareFrame <|-- SquareFrameBlueLight
 SquareFrame <|-- SquareFramePhotochromicTransition
 
 
-RoundFrame <|-- RoundFramePlarized
+RoundFrame <|-- RoundFramePolarized
 RoundFrame <|-- RoundFrameAntiReflective
 RoundFrame <|-- RoundFramePolycarbonate
 RoundFrame <|-- RoundFrameBlueLight

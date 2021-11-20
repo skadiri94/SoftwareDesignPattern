@@ -1,21 +1,13 @@
 package Decorator.Glasses;
 
 public class RoundFrame extends GlassesFrame {
-    public RoundFrame(Lens lens, String size) {
+    public RoundFrame(Lens lens, Size size) {
         super(lens,  size);
-    }
-
-    @Override
-    public String getLenseDetails(){
-        return "Lens Type :: " + lens.getType() +
-                "\nLens Cost :: " + lens.getCost() +
-                "\nFrame Type :: Round" +
-                "\nSize :: " + size;
-
+        description = "Round Frame - €" + Cost.ROUND_FRAME.getValue();
     }
 
     @Override
     public double getCost() {
-        return lens.getCost() + 65;
+        return lens.getCost() + Cost.ROUND_FRAME.getValue() + size.getValue();
     }
 }

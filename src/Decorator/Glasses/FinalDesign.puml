@@ -1,0 +1,101 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+abstract class GlassesFrame {
+#Lens lens
+#String description
+#Size size
+
++getDescription(): String
+{abstract} +getCost(): double
+{abstract} +getSize(): String
+
+
+}
+class Lens {
+-String type
+-double cost
++ Lens(type: String, cost: double)
++getCost()
+
+}
+
+enum Size{
+SMALL
+MEDIUM
+LARGE
+}
+
+enum Cost{
+ANTI_REFLECTIVE
+BLUE_LIGHT
+CAT_EYE_FRAME
+POLARIZED
+POLYCARBONATE
+ROUND_FRAME
+SQUARE_FRAME
+-double costValue
+-Cost(value: double)
++getVavlue(): double
+}
+
+class RoundFrame {
++RoundFrame(lens: Lens, size: String)
++getCost()
+}
+
+class CatEyesFrame {
++CatEyesFrame(lens: Lens, size: String)
++getCost()
+}
+
+class SquareFrame {
++SquareFrame(lens: Lens, size: String)
++getCost()
+}
+
+abstract class GlassesAddOns{
+#GlassesFrame glassFrame
+{abstract} +getDescription(): String
+}
+
+class AntiReflective{
++getDescription(): String
++getCost(): double
+}
+
+class BlueLight{
++getDescription(): String
++getCost(): double
+}
+
+class Polarized{
++getDescription(): String
++getCost(): double
+}
+
+class Polycarbonate{
++getDescription(): String
++getCost(): double
+}
+
+GlassesFrame o--up"0..2" Lens : has
+GlassesFrame <--left Size
+GlassesFrame <|-- GlassesAddOns
+GlassesFrame <-- GlassesAddOns
+
+GlassesFrame <|-- SquareFrame
+GlassesFrame <|-- RoundFrame
+GlassesFrame <|-- CatEyesFrame
+
+GlassesAddOns <|-- AntiReflective
+GlassesAddOns <|-- BlueLight
+GlassesAddOns <|-- Polarized
+GlassesAddOns <|-- Polycarbonate
+
+
+
+
+
+@enduml
