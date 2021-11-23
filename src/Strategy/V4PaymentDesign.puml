@@ -1,0 +1,53 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class MakePayment {
+-units: List
+-paymentType: PaymentType
++MakePayment()
++addUnit(unit: GlassFrame)
++removeUnit(unit: GlassFrame)
++getTotal():double
++pay(PaymentType paymentType):void
+}
+
+interface PaymentType{
+void pay(amount:double)
+}
+
+class PayWithCash{
+-amount: int
++PayWithCash(amount:int)
++pay(amount:decimal):void
+}
+
+class PayWithCreditCard{
+    -  name: String
+    -  cardNumber: String
+    -  expDate: String
+    -  cvv: Integer
+
+    +PayWithCreditCard(name:String,
+    cardNumber:String,expDate:String,cvv:Integer)
+    +pay(amount:decimal):void
+}
+
+class PayWithPayPal{
+  -  emailAdd: String
+  -  password: String
+  +PayWithPayPal(emailAdd:String,password:String)
+  +pay(amount:decimal):void
+
+}
+
+PaymentType <--left MakePayment
+
+PaymentType<|..PayWithCash
+PaymentType<|..PayWithCreditCard
+PaymentType<|..PayWithPayPal
+
+
+
+
+@enduml
