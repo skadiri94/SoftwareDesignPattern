@@ -29,19 +29,27 @@ public class MakePayment {
         return total;
     }
 
+    private void payWithCash(double amount, double amtDue){
+
+        float bal = (float) (amount - amtDue);
+        System.out.println("Balance is : " + bal);
+    }
+
+    private void payWithCredCard(String name, String cardNo, String expDate, Integer cvv, double amtDue){
+        if (name != null && cardNo != null && expDate != null && cvv != null)
+            System.out.println(name + " made a payment of " + amtDue);
+        else
+            System.out.println(" Credit Card Details not correct, please Try again !");
+    }
+
     public void pay(String op, double amount, String name, String cardNo, String expDate, Integer cvv){
         double amtDue = getTotalCost();
-
         if(op .equals("C")) {
-            float bal = (float) (amount - amtDue);
-            System.out.println("Balance is : " + bal);
+            payWithCash(amount, amtDue);
         }
         else if(op .equals("CC")){
-            if (name != null && cardNo != null && expDate != null && cvv != null)
-                System.out.println(name + " made a payment of " + amtDue);
-            else
-                System.out.println(" Credit Card Details not correct, please Try again !");
-        }
+            payWithCredCard(name,cardNo,expDate,cvv,amtDue);
+    }
         else System.out.println("Invalid Payment method Selected!");
     }
 }
