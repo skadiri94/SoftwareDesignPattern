@@ -3,6 +3,7 @@ package Strategy;
 import Decorator.Glasses.GlassesFrame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MakePayment {
@@ -26,15 +27,21 @@ public class MakePayment {
             total += unit.getCost();
         }
         return total;
-
     }
 
-    public void pay(double amount){
+    public void pay(String op, double amount, String name, String cardNo, String expDate, Integer cvv){
         double amtDue = getTotalCost();
-        float bal = (float) (amount - amtDue);
 
-        System.out.println("Balance is : " + bal);
-
+        if(op .equals("C")) {
+            float bal = (float) (amount - amtDue);
+            System.out.println("Balance is : " + bal);
+        }
+        else if(op .equals("CC")){
+            if (name != null && cardNo != null && expDate != null && cvv != null)
+                System.out.println(name + " made a payment of " + amtDue);
+            else
+                System.out.println(" Credit Card Details not correct, please Try again !");
+        }
+        else System.out.println("Invalid Payment method Selected!");
     }
-
 }
