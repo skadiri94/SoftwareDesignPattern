@@ -1,0 +1,50 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class GlassesFrame {
+#Lens lens
+#String size
+
++getDescription(): String
+{abstract} +getCost(): double
+{abstract} +getSize(): String
+
+
+}
+class Lens {
+-String type
+-double cost
++ Lens(type: String, cost: double)
++ getDescription()
++getCost()
+
+}
+
+class RoundFrame {
++RoundFrame(lens: Lens, size: String)
++ getDescription()
++getCost()
+}
+
+class CatEyesFrame {
++CatEyesFrame(lens: Lens, size: String)
++ getDescription()
++getCost()
+}
+
+class SquareFrame {
++SquareFrame(lens: Lens, size: String)
++ getDescription()
++getCost()
+}
+GlassesFrame o--left"0..2" Lens : has
+
+GlassesFrame <|-- SquareFrame
+GlassesFrame <|-- RoundFrame
+GlassesFrame <|-- CatEyesFrame
+
+
+
+
+
+@enduml

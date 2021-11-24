@@ -1,0 +1,18 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class MakePayment {
+-units: List
++MakePayment()
++addUnit(unit: GlassFrame)
++removeUnit(unit: GlassFrame)
++getTotal():double
+-payWithCash(amount:double):void
+-payWithCreditCard(name:String,cardNo:String, cvv:Integer):void
++pay(op:String, amount:double, name:String,cardNo:String, cvv:Integer): void
+}
+
+
+
+@enduml
