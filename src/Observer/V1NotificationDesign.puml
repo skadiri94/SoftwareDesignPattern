@@ -1,0 +1,24 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class Notification {
+ -customer: Customer
+ -msg:  String
+ +Notification(client:Client)
+ +getMsg():String
+ +setMsg(msg: String):void
+-sendMessage(): void
+
+}
+
+class Client {
+-name:String
+-emailAdd:String
++Client(name:String, emailAdd:String)
++sendMail(String message): void
+}
+
+Notification --"1..*" Client
+
+
+@enduml
