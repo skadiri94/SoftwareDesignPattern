@@ -1,21 +1,17 @@
 package Observer;
 
-public class Notification {
-    private Client client;
+public class Notification extends Subject {
     private String msg;
 
-    public Notification(Client client){
-          this.client = client;
+    public Notification(){
+
     }
     public String getMsg(){
         return msg;
     }
     public void setMsg(String msg){
         this.msg = msg;
-        sendNotification();
+        notifySubscribers(msg);
     }
 
-    private void sendNotification(){
-        client.sendEmail(msg);
-    }
 }

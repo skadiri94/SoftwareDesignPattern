@@ -1,0 +1,42 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Subject {
+ -subscribers: List<Subscriber>
+ +addSubscriber(subscribers:ArrayList):void
++removeSubscriber(subscribers:ArrayList): void
+notifySubscribers
+ +{abstract}getMsg():String
+ + {abstract}setMsg(msg: String):void
+}
+class Notification {
+ -msg:  String
+  +getMsg():String
+  +setMsg(msg: String):void
+
+}
+ interface Subscriber {
+    +notify(o: Object): void
+    +getContact(): String
+ }
+
+class Client {
+-name:String
+-emailAdd:String
++Client(name:String, emailAdd:String)
++notify(o: Object): void
++getContact(): String
+}
+
+class PotentialClient{
+-phoneNo: String
++PotentialClient(poneNo:String)
++notify(o: Object): void
++getContact(): String
+}
+Subject <|-- Notification
+Subscriber "0..*"<--* Subject : Observered_by
+Subscriber <|..Client
+Subscriber <|..PotentialClient
+
+@enduml

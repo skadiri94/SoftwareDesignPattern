@@ -18,7 +18,7 @@ class Client {
 +sendMail(String message): void
 }
 
-Notification --"1..*" Client
+Notification *--right"1..*" Client
 
 
 @enduml

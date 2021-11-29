@@ -1,6 +1,8 @@
 package Observer;
 
-public class Client {
+import java.util.List;
+
+public class Client implements Subscriber {
     private String name;
     private String emailAdd;
 
@@ -9,8 +11,18 @@ public class Client {
         this.emailAdd = emailAdd;
     }
 
-    public void sendEmail(String msg){
-        System.out.println("Hello " +name + ",\n\nThe below order is ready for pick up.\n" +
-                msg + "\n\nSent to :" + emailAdd);
+    @Override
+    public void notify(Object obj) {
+
+        if(obj instanceof Subject) {
+            Subject recipients = (Subject) obj;
+            System.out.println("Hello " + name + ",\n\nThe below order is ready for pick up.\n" +
+                    recipients.getMsg() + "\n\nSent to :" + getContact());
+        }
+    }
+
+    @Override
+    public String getContact() {
+        return emailAdd;
     }
 }
