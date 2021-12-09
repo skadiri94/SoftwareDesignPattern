@@ -1,0 +1,16 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+
+class Catalogue {
+- frames: Map<String, GlassesFrame>
++ Catalogue()
++addFrame(key:String,frame:GlassesFrame):Void
++buyFrame(key:String):Void
++displayCatalogue():Void
+-instatiateCatalogue():Void
+}
+
+
+@enduml

@@ -1,6 +1,8 @@
 package Decorator.Glasses;
 
 public class RoundFrame extends GlassesFrame {
+
+
     public RoundFrame(Lens lens, Size size) {
         super(lens,  size);
         description = "Round Frame - €" + Cost.ROUND_FRAME.getValue();

@@ -1,5 +1,6 @@
 package Observer;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Client implements Subscriber {
@@ -16,8 +17,9 @@ public class Client implements Subscriber {
 
         if(obj instanceof Subject) {
             Subject recipients = (Subject) obj;
-            System.out.println("Hello " + name + ",\n\nThe below order is ready for pick up.\n" +
-                    recipients.getMsg() + "\n\nSent to :" + getContact());
+            String output = "Hello " + name + ",\n\nThe below order is ready for pick up.\n" +
+                    recipients.getMsg() + "\n\nSent to :" + getContact();
+            JOptionPane.showMessageDialog(null, output);
         }
     }
 

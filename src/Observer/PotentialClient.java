@@ -1,5 +1,6 @@
 package Observer;
 
+import javax.swing.*;
 import java.util.List;
 
 public class PotentialClient implements Subscriber {
@@ -14,8 +15,10 @@ public class PotentialClient implements Subscriber {
     public void notify(Object obj) {
         if(obj instanceof Subject) {
             Subject recipients = (Subject) obj;
-            System.out.println(recipients.getMsg() + "\n\nSent to :" + getContact());
+            String output = recipients.getMsg() + "\n\nSent to :" + getContact();
+            JOptionPane.showMessageDialog(null, output);
         }
+
     }
 
     @Override
