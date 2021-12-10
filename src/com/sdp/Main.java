@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Catalogue newCatalog = new Catalogue();
+        Catalogue newCatalog = Catalogue.getInstance();
 
         newCatalog.displayCatalogue();
         GlassesFrame newGlasses = new Polarized(newCatalog.buyFrame("Round Frame"));

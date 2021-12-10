@@ -1,0 +1,21 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+
+class Catalogue {
+- frames: Map<String, GlassesFrame>
+-instance: Catalogue
+- Catalogue()
+{static}+getInstance():Catalogue
++addFrame(key:String,frame:GlassesFrame):Void
++buyFrame(key:String):Void
++displayCatalogue():Void
+-instatiateCatalogue():Void
+}
+note right of Catalogue::getInstance
+  This method is a static and it returns
+  an instance of Catalogue.
+end note
+
+@enduml

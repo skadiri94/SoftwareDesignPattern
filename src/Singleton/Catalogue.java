@@ -10,13 +10,21 @@ import java.util.Map;
 public class Catalogue  {
 
     private Map<String, GlassesFrame> frames = new HashMap<>();
+    private static Catalogue instance = null;
 
-    public Catalogue(){
+    private Catalogue(){
         instatiateCatalogue();
     }
 
     public void addFrame(String key, GlassesFrame frame) {
         frames.put(key, frame);
+
+    }
+
+    public static Catalogue getInstance(){
+        if(instance == null)
+             instance = new Catalogue();
+        return instance;
 
     }
 
