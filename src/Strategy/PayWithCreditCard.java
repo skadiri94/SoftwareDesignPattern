@@ -1,5 +1,7 @@
 package Strategy;
 
+import javax.swing.*;
+
 public class PayWithCreditCard implements PaymentType{
     private String name;
     private String cardNumber;
@@ -16,7 +18,8 @@ public class PayWithCreditCard implements PaymentType{
 
     @Override
     public void pay(double amount) {
-        System.out.println("Thanks " + name + " you paid " + amount + " by Card.");
+        String output = "Thanks " + name + " you paid " + amount + " by Card.";
+        JOptionPane.showMessageDialog(null,"----Paid---\n\n" + output);
 
     }
 }

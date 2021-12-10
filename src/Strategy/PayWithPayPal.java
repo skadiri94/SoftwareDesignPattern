@@ -1,5 +1,7 @@
 package Strategy;
 
+import javax.swing.*;
+
 public class PayWithPayPal implements PaymentType{
     private String emailAdd;
     private String password;
@@ -11,7 +13,8 @@ public class PayWithPayPal implements PaymentType{
     }
     @Override
     public void pay(double amount) {
-        System.out.println("You paid " + amount + " by Paypal.");
+        String output = "You paid " + amount + " by Paypal.";
+        JOptionPane.showMessageDialog(null,"----Paid---\n\n" + output);
 
     }
 }

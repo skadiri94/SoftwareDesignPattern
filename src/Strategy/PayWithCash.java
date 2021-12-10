@@ -1,5 +1,7 @@
 package Strategy;
 
+import javax.swing.*;
+
 public class PayWithCash implements PaymentType{
     private int amount;
 
@@ -8,11 +10,14 @@ public class PayWithCash implements PaymentType{
     }
     @Override
     public void pay(double amount) {
+        String output = "";
         double bal = this.amount - amount;
         if(amount > this.amount)
-            System.out.println("Not enough cash");
+            output = "Not enough cash";
         else
-            System.out.println("Thank you for paying, your Balance is : " + bal);
+            output = "Thank you for paying, your Balance is : " + bal;
+
+        JOptionPane.showMessageDialog(null, "----Paid---\n\n" + output);
 
     }
 }

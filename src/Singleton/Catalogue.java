@@ -2,6 +2,7 @@ package Singleton;
 
 import Decorator.Glasses.*;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -57,8 +58,7 @@ public class Catalogue  {
             Entry<String, GlassesFrame> value = (Entry)it.next();
             output.append(value.getKey()).append(" = ").append(value.getValue().getDescription()).append("\n\n");
         }
-//        JOptionPane.showMessageDialog(null,"----Catalogue List---\n\n" + output);
-        System.out.println(output);
+        JOptionPane.showMessageDialog(null,"----Catalogue List---\n\n" + output);
     }
 
     private void instatiateCatalogue(){
